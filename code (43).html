@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cinefeel - Professional Videography & Photography</title>
+    <!-- SEO Change: Updated Title Tag -->
+    <title>cinefeel | Expert Videography & Photography in Hyderabad | Weddings, Events, Films</title>
+    <!-- SEO Change: Added Meta Description -->
+    <meta name="description" content="cinefeel, founded by SIVA KOTI MANNEM, offers professional videography and photography in Hyderabad. Specializing in cinematic short films, weddings, events, and product shoots. Contact us for unforgettable visual storytelling.">
+    <!-- SEO Change: Added Meta Keywords (Optional but included) -->
+    <meta name="keywords" content="videography hyderabad, photography hyderabad, wedding videographer, event photographer, short films, cinematic video, product photography, fashion photography, cinefeel, siva koti mannem">
+    <!-- SEO Change: Added Canonical URL (Replace with your actual domain) -->
+    <link rel="canonical" href="https://www.yourcinefeeldomain.com/" /> <!-- Replace with your actual domain -->
+    <!-- SEO Change: Added Favicon Placeholders (Create these files) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <style>
         /* Color Palette */
         :root {
@@ -65,7 +79,8 @@
             background-color: var(--brown);
         }
 
-        h2 {
+        /* SEO Change: h1 will be used for the main page title */
+        h1, h2 {
             font-size: 2.3em;
             color: var(--off-white);
             margin-bottom: 0.8em;
@@ -75,7 +90,7 @@
             padding-bottom: 10px;
         }
 
-        h2::after {
+        h1::after, h2::after {
             content: '';
             position: absolute;
             left: 50%;
@@ -101,7 +116,7 @@
             margin-right: auto;
             margin-bottom: 1.2em;
         }
-        section > h2 + p {
+        section > h1 + p, section > h2 + p { /* Adjusted for h1 */
             font-size: 1.1em;
             max-width: 750px;
             margin-bottom: 1.5em;
@@ -438,20 +453,19 @@
 
 
         /* --- Mobile Optimizations --- */
-
         @media (max-width: 768px) {
             header {
                 padding: 10px 15px;
             }
             #site-logo {
-                max-width: 100px;
-                height: auto; /* Fix: Allow height to adjust */
+                max-width: 150px; /* Adjusted for better visibility */
+                height: auto;
             }
 
-            h2 { font-size: 2em; }
+            h1, h2 { font-size: 2em; } /* Adjusted for h1 */
             h3 { font-size: 1.5em; }
             p { font-size: 1em; }
-            section > h2 + p { font-size: 1.05em; }
+            section > h1 + p, section > h2 + p { font-size: 1.05em; } /* Adjusted for h1 */
             section { padding: 30px 15px; }
 
             #welcome-video { max-height: 300px; }
@@ -488,17 +502,16 @@
 
         @media (max-width: 480px) {
              #site-logo {
-                max-width: 90px;
-                height: auto; /* Fix: Allow height to adjust */
+                max-width: 120px; /* Adjusted for better visibility */
+                height: auto;
             }
 
-            h2 { font-size: 1.7em; }
+            h1, h2 { font-size: 1.7em; } /* Adjusted for h1 */
             h3 { font-size: 1.3em; }
             p { font-size: 0.95em; line-height: 1.6; }
-            section > h2 + p { font-size: 1em; }
-            /* .main { padding: 0 10px; } */ /* Commented out as .main class is not used, use 'main' element selector if needed */
-            main { /* If specific padding for main element is needed at this breakpoint */
-                 /* padding: 0 10px; */ /* Example, adjust as needed or remove if base padding is fine */
+            section > h1 + p, section > h2 + p { font-size: 1em; } /* Adjusted for h1 */
+            main {
+                 /* padding: 0 10px; */
             }
             section { padding: 25px 10px; margin-bottom: 20px; }
 
@@ -522,7 +535,7 @@
             .services-list li:hover {
                  transform: translateX(3px);
             }
-            .contact-item h3 { /* This style still applies to the WhatsApp h3 */
+            .contact-item h3 {
                 font-size: 1.3em;
                 flex-direction: column;
                 gap: 5px;
@@ -531,28 +544,65 @@
             #philosophy-quote .quote-text { font-size: 1.2em; }
         }
     </style>
+    <!-- SEO Change: Added JSON-LD Structured Data (ProfessionalService) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "cinefeel",
+      "image": "https://i.ibb.co/7xtGM4Dz/cinefeel-final-3-min.png",
+      "url": "https://www.yourcinefeeldomain.com/", // Replace with your actual domain
+      "telephone": "+917093825513",
+      "email": "sivakotimannem@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "SIVA KOTI MANNEM"
+      },
+      "description": "cinefeel offers expert videography and photography services in Hyderabad, specializing in cinematic short films, weddings, events, and high-quality product shoots.",
+      "address": { // Assuming a service area, if physical address add more details
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressCountry": "IN"
+      },
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short Film Production" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Videography" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Event Coverage (Photo & Video)" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Photography" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fashion & Model Photography" }}
+      ],
+      "sameAs": [ // Add your actual social media profile URLs
+        "https://www.instagram.com/shiva_is__love/",
+        "https://twitter.com/Shiva__is_love",
+        "https://www.facebook.com/sivakotichowdary.mannem/?locale=hi_IN",
+        "https://in.linkedin.com/in/siva-koti-mannem-083a66253"
+      ]
+    }
+    </script>
 </head>
 <body>
 
     <header>
-        <img src="https://i.ibb.co/7xtGM4Dz/cinefeel-final-3-min.png" alt="cinefeel Logo" id="site-logo">
+        <img src="https://i.ibb.co/7xtGM4Dz/cinefeel-final-3-min.png" alt="cinefeel Professional Videography and Photography Logo" id="site-logo"> <!-- SEO Change: Improved Alt Text -->
     </header>
 
     <main>
         <section id="welcome">
             <video id="welcome-video" autoplay loop muted playsinline poster="https://sivakotimannem.my.canva.site/com/_assets/media/9fc1c0214d44b3d34e438186a860b768.jpg">
                 <source src="https://sivakotimannem.my.canva.site/com/_assets/video/fe2b8b8a8b64707d43c0e77d9d2215e1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Your browser does not support the video tag. This video showcases cinefeel's cinematic style.
             </video>
-            <h2>Crafting Cinematic Memories for Every Occasion</h2>
-            <h3>Professional Video & Photography Services</h3>
-            <p>We transform your visions into stunning visual stories. Explore our work and let's create something unforgettable together.</p>
+            <!-- SEO Change: Changed H2 to H1 for main page title -->
+            <h1>Crafting Cinematic Memories for Every Occasion</h1>
+            <h3>Professional Video & Photography Services in Hyderabad</h3> <!-- SEO: Added location hint -->
+            <p>We transform your visions into stunning visual stories. Explore our work and let's create something unforgettable together. Based in Hyderabad, serving clients with exceptional videography and photography.</p> <!-- SEO: Added location hint -->
             <p><a href="mailto:sivakotimannem@gmail.com" class="cta-button">Book cinefeel for Your Project</a></p>
         </section>
 
         <section id="services">
-            <h2>Our Services</h2>
-            <p>cinefeel offers a range of professional video and photography services tailored to your needs:</p>
+            <h2>Our Videography & Photography Services</h2> <!-- SEO: More specific H2 -->
+            <p>cinefeel offers a range of professional video and photography services in Hyderabad, tailored to your needs:</p> <!-- SEO: Added location -->
             <ul class="services-list">
                 <li><strong>Short Films:</strong> Bringing creative concepts to life with cinematic storytelling.</li>
                 <li><strong>Wedding Videography & Photography:</strong> Capturing the magic of your special day with artistry and emotion.</li>
@@ -564,15 +614,15 @@
         </section>
 
         <section id="about-cinefeel">
-            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/4ca05b4ea90319471cf139c13e3905bd.jpg" alt="SIVA KOTI MANNEM - Founder of cinefeel" style="width: 200px; height: 200px; object-fit: contain; border-radius: 50%; background-color: var(--darker-brown);">
-            <p>cinefeel is a passion-driven creative studio founded by <strong>SIVA KOTI MANNEM</strong>. We specialize in transforming moments into cinematic masterpieces. With a strong background in cinematography and photography, cinefeel brings a blend of technical expertise and artistic vision to every project, whether it's a heartfelt wedding film, a compelling short film, or vibrant event photography. Our mission is to capture the essence of your story and deliver visuals that resonate and travel worldwide to create the best visuals.</p>
+            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/4ca05b4ea90319471cf139c13e3905bd.jpg" alt="SIVA KOTI MANNEM - Founder of cinefeel Videography & Photography" style="width: 200px; height: 200px; object-fit: contain; border-radius: 50%; background-color: var(--darker-brown);" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+            <p>cinefeel is a passion-driven creative studio founded by <strong>SIVA KOTI MANNEM</strong>, a professional videographer and photographer based in Hyderabad. We specialize in transforming moments into cinematic masterpieces. With a strong background in cinematography and photography, cinefeel brings a blend of technical expertise and artistic vision to every project, whether it's a heartfelt wedding film, a compelling short film, or vibrant event photography. Our mission is to capture the essence of your story and deliver visuals that resonate and travel worldwide to create the best visuals.</p> <!-- SEO: Added "photographer based in Hyderabad" -->
         </section>
 
         <section id="our-background">
             <h2>Our Background & Expertise</h2>
             <video id="autoplay-video" poster="https://sivakotimannem.my.canva.site/com/_assets/video/1c53e285d5fe062b6d710eb724141c8b.jpg" controls muted playsinline loop>
                 <source src="https://sivakotimannem.my.canva.site/com/_assets/video/fe2b8b8a8b64707d43c0e77d9d2215e1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Your browser does not support the video tag. This video highlights cinefeel's technical skills.
             </video>
             <div>
                 <h3>Foundation of Excellence</h3>
@@ -580,54 +630,57 @@
             </div>
             <div>
                 <h3>Professional Experience</h3>
-                <p>With 2 years as a Freelance Cinematographer and Photographer (2023-present), and a formative internship as a Cinematographer at Zurial Studios, Hyderabad, cinefeel is well-versed in all types of camera systems, rigs, camera equipment, and cinematic lighting techniques.</p>
+                <!-- Text Removal: Removed the specified phrase -->
+                <p>With 2 years as a Freelance Cinematographer and Photographer, cinefeel is well-versed in all types of camera systems, rigs, camera equipment, and cinematic lighting techniques.</p>
                 <p>Our experience spans product photography, model, and fashion photography, ensuring versatile and high-quality results for diverse projects.</p>
             </div>
-             <img src="https://sivakotimannem.my.canva.site/com/_assets/media/941111306bc537b17332d35a9d5f4eae.svg" alt="Decorative icon" style="width:30px; box-shadow:none; margin-top:20px; filter: contrast(0%) brightness(200%) sepia(100%) hue-rotate(30deg) saturate(0%);">
+             <img src="https://sivakotimannem.my.canva.site/com/_assets/media/941111306bc537b17332d35a9d5f4eae.svg" alt="Decorative film strip icon for cinefeel" style="width:30px; box-shadow:none; margin-top:20px; filter: contrast(0%) brightness(200%) sepia(100%) hue-rotate(30deg) saturate(0%);" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
         </section>
 
         <section id="portfolio">
-            <h2>Few Works by cinefeel</h2>
+            <h2>Few Works by cinefeel - Videography Portfolio</h2> <!-- SEO: More specific H2 -->
             <div class="portfolio-item">
                 <p>MRUGAM Short film - Cinematography by cinefeel</p>
-                <a href="https://youtu.be/JxCJNDVk5Hs?si=Ealz9cy4sGe76jBq" target="_blank">
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/3f303cb84a9615158588537e89d8b90d.png" alt="MRUGAM Short film thumbnail">
+                <a href="https://youtu.be/JxCJNDVk5Hs?si=Ealz9cy4sGe76jBq" target="_blank" rel="noopener noreferrer"> <!-- SEO: Added rel noopener noreferrer for security/SEO -->
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/3f303cb84a9615158588537e89d8b90d.png" alt="MRUGAM Short film thumbnail - Cinematography by cinefeel" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
                 </a>
             </div>
             <div class="portfolio-item">
                 <p>DON’T SKIP psa - Cinematography by cinefeel</p>
-                <a href="https://youtu.be/nwuIAnX_cuw?si=3UWSlk2fFeZvjruX" target="_blank">
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/92f55a18fb5ee53b696d212cf5c7db86.png" alt="DON’T SKIP psa thumbnail">
+                <a href="https://youtu.be/nwuIAnX_cuw?si=3UWSlk2fFeZvjruX" target="_blank" rel="noopener noreferrer">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/92f55a18fb5ee53b696d212cf5c7db86.png" alt="DON’T SKIP PSA video thumbnail - Cinematography by cinefeel" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
                 </a>
             </div>
             <div class="portfolio-item">
                 <p>ALERT Short film - Assistant Cinematographer</p>
-                <a href="https://youtu.be/DzL-HLdtwFM?si=8oUSqeD1j16K-2aD" target="_blank">
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/99b2d2a9c2c25e4013e1e1de84eef24f.png" alt="ALERT Short film thumbnail">
+                <a href="https://youtu.be/DzL-HLdtwFM?si=8oUSqeD1j16K-2aD" target="_blank" rel="noopener noreferrer">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/99b2d2a9c2c25e4013e1e1de84eef24f.png" alt="ALERT Short film thumbnail - Assistant Cinematography by SIVA KOTI MANNEM" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
                 </a>
             </div>
         </section>
 
         <section id="philosophy-quote">
-            <h2>Our Guiding Philosophy</h2>
-            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e5eb5ba4169a9e41646ffc8e7a48e80e.png" alt="Inspirational background" style="max-width: 100%; max-height: 280px; object-fit: contain; opacity: 0.7; margin-bottom: 20px; background-color: var(--darker-brown);">
+            <h2>Our Guiding Philosophy at cinefeel</h2> <!-- SEO: Added brand -->
+            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e5eb5ba4169a9e41646ffc8e7a48e80e.png" alt="Artistic image of camera lens reflecting light, symbolizing cinefeel's philosophy" style="max-width: 100%; max-height: 280px; object-fit: contain; opacity: 0.7; margin-bottom: 20px; background-color: var(--darker-brown);" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
             <p class="quote-text">"Capture what you feel, not what you see."</p>
             <p class="quote-attribution">- SIVA KOTI MANNEM, Founder of cinefeel</p>
         </section>
 
         <section id="gallery-categories">
             <h2>A Glimpse into Our Lens: Photography Categories</h2>
-            <p>Discover the diverse range of subjects cinefeel masterfully captures. Each category showcases our commitment to detail and artistic vision.</p>
+            <p>Discover the diverse range of subjects cinefeel masterfully captures in Hyderabad. Each category showcases our commitment to detail and artistic vision.</p> <!-- SEO: Added location hint -->
             <div class="vertical-text-container">
                 <div class="vertical-text-item">
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/730a8098ed936635989a222f3d9fe317.jpg" alt="Detailed product photography by cinefeel">
+                     <h3>Product Photography</h3> <!-- SEO: Added Heading -->
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/730a8098ed936635989a222f3d9fe317.jpg" alt="Detailed product photography sample by cinefeel in Hyderabad" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
                 </div>
                 <div class="vertical-text-item">
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/0404ee9bc80c32d38bbc3d6aafa6204d.jpg" alt="Exquisite jewellery photography by cinefeel">
+                     <h3>Jewellery Photography</h3> <!-- SEO: Added Heading -->
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/0404ee9bc80c32d38bbc3d6aafa6204d.jpg" alt="Exquisite jewellery photography by cinefeel, Hyderabad" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
                 </div>
                 <div class="vertical-text-item">
-                    <h3>Clothing & Fashion</h3>
-                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/1a97324d05bb208a20776c20ec454944.png" alt="Stylish clothing and fashion photography by cinefeel">
+                    <h3>Clothing & Fashion Photography</h3> <!-- SEO: More specific -->
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/1a97324d05bb208a20776c20ec454944.png" alt="Stylish clothing and fashion photography by cinefeel" loading="lazy"> <!-- SEO: Added lazy loading -->
                 </div>
             </div>
         </section>
@@ -635,25 +688,26 @@
         <section id="image-showcase">
             <h2>Clicks - Image Showcase from cinefeel</h2>
             <div class="gallery-grid">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/afdbee1a11ae8655d33a7891ae1f2d9f.jpg" alt="Showcase Image 1">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/65d1e0b43dd73881538e4c5b6d808356.png" alt="Showcase Image 2">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/28bb74c520a33ea35a133263125e14e1.jpg" alt="Showcase Image 3">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/331890b94ff6755acc088f0c87a72d0e.jpg" alt="Showcase Image 4">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/afdbee1a11ae8655d33a7891ae1f2d9f.jpg" alt="Creative portrait photography by cinefeel - Showcase 1" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/65d1e0b43dd73881538e4c5b6d808356.png" alt="Dynamic event photography by cinefeel - Showcase 2" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/28bb74c520a33ea35a133263125e14e1.jpg" alt="Artistic still life photography by cinefeel - Showcase 3" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/331890b94ff6755acc088f0c87a72d0e.jpg" alt="Professional product photography by cinefeel - Showcase 4" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
             </div>
         </section>
 
         <section id="more-gallery">
-            <h2>Gallery - More Images from cinefeel</h2>
+            <h2>Gallery - More Images from cinefeel Photography</h2> <!-- SEO: More specific -->
             <div class="gallery-grid">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e20a4b9a21491cbf3d5ed4dcc4592638.jpg" alt="Gallery Image 1">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/19863c03b6b3375284612bcd4e4fe752.jpg" alt="Gallery Image 2">
-                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/bb3f61571e2a0a5d3dbc84c526e500ac.jpg" alt="Gallery Image 3">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e20a4b9a21491cbf3d5ed4dcc4592638.jpg" alt="Wedding photography candid moment by cinefeel - Gallery 1" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/19863c03b6b3375284612bcd4e4fe752.jpg" alt="Fashion model portfolio shot by cinefeel - Gallery 2" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/bb3f61571e2a0a5d3dbc84c526e500ac.jpg" alt="Commercial product photography by cinefeel - Gallery 3" loading="lazy"> <!-- SEO: Improved Alt, Added lazy loading -->
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get in Touch with cinefeel</h2>
+            <h2>Get in Touch with cinefeel in Hyderabad</h2> <!-- SEO: Added location -->
             <div class="contact-item">
+                <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon" style="width:20px; height:20px; margin-right:8px; fill:currentColor;"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg>Email Us</h3>
                 <p><a href="mailto:sivakotimannem@gmail.com">sivakotimannem@gmail.com</a></p>
             </div>
             <div class="contact-item">
@@ -661,22 +715,22 @@
                 <p>+91 7093825513</p>
             </div>
             <div class="social-icons">
-                <a href="https://www.instagram.com/shiva_is__love/" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/8e14e6c70f4c1e3aaed7b2eafc7da85f.png" alt="Instagram"></a>
-                <a href="https://twitter.com/Shiva__is_love" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/00719f4823f90843c26a4ebf9a7c3347.png" alt="Twitter"></a>
-                <a href="https://www.facebook.com/sivakotichowdary.mannem/?locale=hi_IN" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/3aa66166dd203cfdcaedfe4cd18c44bd.png" alt="Facebook"></a>
-                <a href="https://in.linkedin.com/in/siva-koti-mannem-083a66253" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/0a650f84c8e697505e30f934b7b6cc0c.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/shiva_is__love/" target="_blank" rel="noopener noreferrer"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/8e14e6c70f4c1e3aaed7b2eafc7da85f.png" alt="cinefeel on Instagram"></a> <!-- SEO: Improved Alt -->
+                <a href="https://twitter.com/Shiva__is_love" target="_blank" rel="noopener noreferrer"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/00719f4823f90843c26a4ebf9a7c3347.png" alt="cinefeel on Twitter"></a> <!-- SEO: Improved Alt -->
+                <a href="https://www.facebook.com/sivakotichowdary.mannem/?locale=hi_IN" target="_blank" rel="noopener noreferrer"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/3aa66166dd203cfdcaedfe4cd18c44bd.png" alt="cinefeel on Facebook"></a> <!-- SEO: Improved Alt -->
+                <a href="https://in.linkedin.com/in/siva-koti-mannem-083a66253" target="_blank" rel="noopener noreferrer"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/0a650f84c8e697505e30f934b7b6cc0c.png" alt="SIVA KOTI MANNEM on LinkedIn"></a> <!-- SEO: Improved Alt -->
             </div>
             <p style="margin-top: 30px;"><a href="#contact" class="cta-button">Let's collaborate with cinefeel</a></p>
         </section>
     </main>
 
     <footer>
-        <p>© <script>document.write(new Date().getFullYear())</script> cinefeel. All rights reserved.</p>
+        <p>© <script>document.write(new Date().getFullYear())</script> cinefeel. All rights reserved. Professional Videography and Photography in Hyderabad.</p> <!-- SEO: Added keywords -->
     </footer>
 
     <div id="fullscreen-modal">
-        <span id="close-fullscreen">&times;</span>
-        <img id="fullscreen-image" src="" alt="Fullscreen Image">
+        <span id="close-fullscreen">×</span>
+        <img id="fullscreen-image" src="" alt="Fullscreen view of cinefeel gallery image"> <!-- SEO: Generic alt for modal -->
     </div>
 
     <script>
@@ -690,7 +744,7 @@
                             const playPromise = autoplayVideo.play();
                             if (playPromise !== undefined) {
                                 playPromise.then(_ => {}).catch(error => {
-                                    console.warn("Autoplay video was prevented:", error);
+                                    // console.warn("Autoplay video was prevented:", error); // Keep for debugging if needed
                                 });
                             }
                         } else {
@@ -699,8 +753,6 @@
                     });
                 }, observerOptions);
                 videoObserver.observe(autoplayVideo);
-            } else {
-                console.warn("Video element with id 'autoplay-video' not found.");
             }
 
             const modal = document.getElementById('fullscreen-modal');
@@ -711,10 +763,11 @@
             );
 
             clickableImages.forEach(img => {
-                if (img.src && img.src !== window.location.href) { // Ensure img.src is valid
+                if (img.src && img.src !== window.location.href) {
                     img.addEventListener('click', function() {
                         modal.style.display = "flex";
                         modalImg.src = this.src;
+                        modalImg.alt = this.alt + " - Fullscreen view"; // SEO: Dynamically update alt for modal
                         setTimeout(() => {
                            modal.classList.add('visible');
                         }, 10);
@@ -727,6 +780,7 @@
                 setTimeout(() => {
                     modal.style.display = "none";
                     modalImg.src = "";
+                    modalImg.alt = "Fullscreen view of cinefeel gallery image"; // Reset alt
                 }, 300);
             }
 
