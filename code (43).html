@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinefeel - Professional Videography & Photography</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --brown: #39302a;
+            --off-white: #F6F0F0;
+            --darker-brown: #2a241f;
+            --lighter-brown-section: #453a33;
+            --accent-gold: #D4A373;
+            --text-secondary: #c7c2c2;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            background-color: var(--brown);
+            color: var(--off-white);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        header {
+            background-color: #FFFFFF; /* White background */
+            padding: 5px 20px;
+            border-bottom: 4px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Logo to the left */
+        }
+
+        #site-logo {
+            width: 200px;
+            height: 50px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        section:nth-child(odd) {
+            background-color: var(--lighter-brown-section);
+        }
+        section:nth-child(even) {
+            background-color: var(--brown);
+        }
+
+        h2 {
+            font-size: 2.3em;
+            color: var(--off-white);
+            margin-bottom: 0.8em;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        h3 {
+            font-size: 1.7em;
+            color: var(--off-white);
+            margin-bottom: 0.5em;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.05em;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.2em;
+        }
+        section > h2 + p {
+            font-size: 1.1em;
+            max-width: 750px;
+            margin-bottom: 1.5em;
+        }
+
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-grid img, .portfolio-item img, .vertical-text-item img, #about-cinefeel img, #philosophy-quote img {
+            cursor: pointer;
+        }
+
+
+        #autoplay-video, #welcome-video {
+             width:100%;
+        }
+        #autoplay-video {
+            max-width: 640px;
+        }
+        #welcome-video {
+            max-height: 350px;
+            object-fit: cover;
+            background-color: var(--darker-brown);
+        }
+
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 300px;
+            height: 240px;
+            object-fit: contain;
+            border: 2px solid var(--lighter-brown-section);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: var(--darker-brown);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(212, 163, 115, 0.4);
+        }
+
+        .portfolio-item {
+            background-color: var(--lighter-brown-section);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        section:nth-child(odd) .portfolio-item {
+             background-color: var(--brown);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .portfolio-item p {
+            font-size: 1.1em;
+            color: var(--off-white);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-item img {
+            border: 3px solid var(--accent-gold);
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+            background-color: var(--darker-brown);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #e7b88e;
+            text-decoration: underline;
+            opacity: 0.85;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--brown) !important;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-top: 15px;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background-color: #c89666;
+            color: var(--darker-brown) !important;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: none;
+            background-color: var(--off-white);
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        .vertical-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .vertical-text-item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 20px;
+            width: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .vertical-text-item:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .vertical-text-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--off-white);
+        }
+
+        .vertical-text-item h3.vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            margin-right: 0;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        .vertical-text-item img {
+            width: 280px;
+            height: 350px;
+            object-fit: contain;
+            background-color: var(--darker-brown);
+            transition: opacity 0.3s ease-in-out;
+        }
+        .vertical-text-item img:hover {
+            opacity: 0.85;
+        }
+
+
+        .contact-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--lighter-brown-section);
+            border-radius: 6px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+         section:nth-child(odd) .contact-item {
+             background-color: var(--brown);
+        }
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        }
+        section:nth-child(odd) .contact-item:hover {
+             background-color: var(--darker-brown);
+        }
+         section:nth-child(even) .contact-item:hover {
+             background-color: #52453c;
+        }
+
+
+        .contact-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .contact-item img.icon, .contact-item svg.icon { /* This rule still applies to the WhatsApp icon */
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            box-shadow: none;
+            border-radius: 0;
+            fill: var(--accent-gold);
+            transition: transform 0.3s ease-in-out;
+        }
+        .contact-item:hover img.icon, .contact-item:hover svg.icon {
+            transform: scale(1.1);
+        }
+         .contact-item img.icon { /* This rule still applies to the WhatsApp icon if it were an img, currently it's an svg */
+            filter: invert(70%) sepia(20%) saturate(800%) hue-rotate(340deg) brightness(90%) contrast(90%);
+         }
+
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .services-list li {
+            background-color: var(--lighter-brown-section);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-gold);
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+         section:nth-child(odd) .services-list li {
+             background-color: var(--brown);
+        }
+        .services-list li:hover {
+            background-color: var(--darker-brown);
+            transform: translateX(5px);
+        }
+        .services-list li strong {
+            color: var(--off-white);
+        }
+
+
+        #philosophy-quote .quote-text {
+            font-size: 1.7em;
+            font-style: italic;
+            color: var(--off-white);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        #philosophy-quote .quote-attribution {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--darker-brown);
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            border-top: 1px solid var(--brown);
+            margin-top: 40px;
+        }
+
+        /* --- Fullscreen Modal Styles --- */
+        #fullscreen-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #fullscreen-modal.visible {
+            opacity: 1;
+        }
+
+        #fullscreen-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            display: block;
+            margin: auto;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border-radius: 0;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        #fullscreen-modal.visible img {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        #close-fullscreen {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        #close-fullscreen:hover {
+            color: var(--accent-gold);
+            transform: scale(1.1);
+        }
+
+
+        /* --- Mobile Optimizations --- */
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+            #site-logo {
+                max-width: 100px;
+                height: auto; /* Fix: Allow height to adjust */
+            }
+
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.5em; }
+            p { font-size: 1em; }
+            section > h2 + p { font-size: 1.05em; }
+            section { padding: 30px 15px; }
+
+            #welcome-video { max-height: 300px; }
+
+            .gallery-grid img {
+                width: 48%;
+                height: auto;
+            }
+
+            .vertical-text-item {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+            .vertical-text-item:hover {
+                transform: translateY(0);
+            }
+
+
+            .vertical-text-item h3 { font-size: 1.3em; margin-bottom: 10px; }
+
+            .vertical-text-item img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+            #philosophy-quote .quote-text { font-size: 1.4em; }
+
+            #close-fullscreen {
+                top: 15px;
+                right: 25px;
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+             #site-logo {
+                max-width: 90px;
+                height: auto; /* Fix: Allow height to adjust */
+            }
+
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.3em; }
+            p { font-size: 0.95em; line-height: 1.6; }
+            section > h2 + p { font-size: 1em; }
+            /* .main { padding: 0 10px; } */ /* Commented out as .main class is not used, use 'main' element selector if needed */
+            main { /* If specific padding for main element is needed at this breakpoint */
+                 /* padding: 0 10px; */ /* Example, adjust as needed or remove if base padding is fine */
+            }
+            section { padding: 25px 10px; margin-bottom: 20px; }
+
+            #welcome-video { max-height: 250px; }
+
+            .gallery-grid img {
+                width: 90%;
+            }
+            .vertical-text-item {
+                width: 95%;
+            }
+
+            .vertical-text-item h3 { font-size: 1.2em; }
+            .vertical-text-item img {
+                max-height: 280px;
+            }
+
+
+            .cta-button { padding: 10px 20px; font-size: 1em; }
+            .services-list li { font-size: 1em; }
+            .services-list li:hover {
+                 transform: translateX(3px);
+            }
+            .contact-item h3 { /* This style still applies to the WhatsApp h3 */
+                font-size: 1.3em;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .contact-item img.icon, .contact-item svg.icon { margin-right: 0; margin-bottom: 5px; }
+            #philosophy-quote .quote-text { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.ibb.co/7xtGM4Dz/cinefeel-final-3-min.png" alt="cinefeel Logo" id="site-logo">
+    </header>
+
+    <main>
+        <section id="welcome">
+            <video id="welcome-video" autoplay loop muted playsinline poster="https://sivakotimannem.my.canva.site/com/_assets/media/9fc1c0214d44b3d34e438186a860b768.jpg">
+                <source src="https://sivakotimannem.my.canva.site/com/_assets/video/fe2b8b8a8b64707d43c0e77d9d2215e1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>Crafting Cinematic Memories for Every Occasion</h2>
+            <h3>Professional Video & Photography Services</h3>
+            <p>We transform your visions into stunning visual stories. Explore our work and let's create something unforgettable together.</p>
+            <p><a href="mailto:sivakotimannem@gmail.com" class="cta-button">Book cinefeel for Your Project</a></p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>cinefeel offers a range of professional video and photography services tailored to your needs:</p>
+            <ul class="services-list">
+                <li><strong>Short Films:</strong> Bringing creative concepts to life with cinematic storytelling.</li>
+                <li><strong>Wedding Videography & Photography:</strong> Capturing the magic of your special day with artistry and emotion.</li>
+                <li><strong>Event Coverage:</strong> Professional photos and videos for corporate events, parties, and other occasions.</li>
+                <li><strong>Product Photography:</strong> High-quality imagery to showcase your products.</li>
+                <li><strong>Fashion & Model Photography:</strong> Creative shoots for portfolios and brands.</li>
+            </ul>
+            <p>Have a unique project in mind? <a href="#contact">Contact us</a> to discuss your vision!</p>
+        </section>
+
+        <section id="about-cinefeel">
+            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/4ca05b4ea90319471cf139c13e3905bd.jpg" alt="SIVA KOTI MANNEM - Founder of cinefeel" style="width: 200px; height: 200px; object-fit: contain; border-radius: 50%; background-color: var(--darker-brown);">
+            <p>cinefeel is a passion-driven creative studio founded by <strong>SIVA KOTI MANNEM</strong>. We specialize in transforming moments into cinematic masterpieces. With a strong background in cinematography and photography, cinefeel brings a blend of technical expertise and artistic vision to every project, whether it's a heartfelt wedding film, a compelling short film, or vibrant event photography. Our mission is to capture the essence of your story and deliver visuals that resonate and travel worldwide to create the best visuals.</p>
+        </section>
+
+        <section id="our-background">
+            <h2>Our Background & Expertise</h2>
+            <video id="autoplay-video" poster="https://sivakotimannem.my.canva.site/com/_assets/video/1c53e285d5fe062b6d710eb724141c8b.jpg" controls muted playsinline loop>
+                <source src="https://sivakotimannem.my.canva.site/com/_assets/video/fe2b8b8a8b64707d43c0e77d9d2215e1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div>
+                <h3>Foundation of Excellence</h3>
+                <p>The creative force behind cinefeel, SIVA KOTI MANNEM, holds a Diploma in Film Technology (Cinematography) from FTIH, Hyderabad. This solid educational foundation is complemented by hands-on experience.</p>
+            </div>
+            <div>
+                <h3>Professional Experience</h3>
+                <p>With 2 years as a Freelance Cinematographer and Photographer (2023-present), and a formative internship as a Cinematographer at Zurial Studios, Hyderabad, cinefeel is well-versed in all types of camera systems, rigs, camera equipment, and cinematic lighting techniques.</p>
+                <p>Our experience spans product photography, model, and fashion photography, ensuring versatile and high-quality results for diverse projects.</p>
+            </div>
+             <img src="https://sivakotimannem.my.canva.site/com/_assets/media/941111306bc537b17332d35a9d5f4eae.svg" alt="Decorative icon" style="width:30px; box-shadow:none; margin-top:20px; filter: contrast(0%) brightness(200%) sepia(100%) hue-rotate(30deg) saturate(0%);">
+        </section>
+
+        <section id="portfolio">
+            <h2>Few Works by cinefeel</h2>
+            <div class="portfolio-item">
+                <p>MRUGAM Short film - Cinematography by cinefeel</p>
+                <a href="https://youtu.be/JxCJNDVk5Hs?si=Ealz9cy4sGe76jBq" target="_blank">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/3f303cb84a9615158588537e89d8b90d.png" alt="MRUGAM Short film thumbnail">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <p>DON’T SKIP psa - Cinematography by cinefeel</p>
+                <a href="https://youtu.be/nwuIAnX_cuw?si=3UWSlk2fFeZvjruX" target="_blank">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/92f55a18fb5ee53b696d212cf5c7db86.png" alt="DON’T SKIP psa thumbnail">
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <p>ALERT Short film - Assistant Cinematographer</p>
+                <a href="https://youtu.be/DzL-HLdtwFM?si=8oUSqeD1j16K-2aD" target="_blank">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/99b2d2a9c2c25e4013e1e1de84eef24f.png" alt="ALERT Short film thumbnail">
+                </a>
+            </div>
+        </section>
+
+        <section id="philosophy-quote">
+            <h2>Our Guiding Philosophy</h2>
+            <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e5eb5ba4169a9e41646ffc8e7a48e80e.png" alt="Inspirational background" style="max-width: 100%; max-height: 280px; object-fit: contain; opacity: 0.7; margin-bottom: 20px; background-color: var(--darker-brown);">
+            <p class="quote-text">"Capture what you feel, not what you see."</p>
+            <p class="quote-attribution">- SIVA KOTI MANNEM, Founder of cinefeel</p>
+        </section>
+
+        <section id="gallery-categories">
+            <h2>A Glimpse into Our Lens: Photography Categories</h2>
+            <p>Discover the diverse range of subjects cinefeel masterfully captures. Each category showcases our commitment to detail and artistic vision.</p>
+            <div class="vertical-text-container">
+                <div class="vertical-text-item">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/730a8098ed936635989a222f3d9fe317.jpg" alt="Detailed product photography by cinefeel">
+                </div>
+                <div class="vertical-text-item">
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/0404ee9bc80c32d38bbc3d6aafa6204d.jpg" alt="Exquisite jewellery photography by cinefeel">
+                </div>
+                <div class="vertical-text-item">
+                    <h3>Clothing & Fashion</h3>
+                    <img src="https://sivakotimannem.my.canva.site/com/_assets/media/1a97324d05bb208a20776c20ec454944.png" alt="Stylish clothing and fashion photography by cinefeel">
+                </div>
+            </div>
+        </section>
+
+        <section id="image-showcase">
+            <h2>Clicks - Image Showcase from cinefeel</h2>
+            <div class="gallery-grid">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/afdbee1a11ae8655d33a7891ae1f2d9f.jpg" alt="Showcase Image 1">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/65d1e0b43dd73881538e4c5b6d808356.png" alt="Showcase Image 2">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/28bb74c520a33ea35a133263125e14e1.jpg" alt="Showcase Image 3">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/331890b94ff6755acc088f0c87a72d0e.jpg" alt="Showcase Image 4">
+            </div>
+        </section>
+
+        <section id="more-gallery">
+            <h2>Gallery - More Images from cinefeel</h2>
+            <div class="gallery-grid">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/e20a4b9a21491cbf3d5ed4dcc4592638.jpg" alt="Gallery Image 1">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/19863c03b6b3375284612bcd4e4fe752.jpg" alt="Gallery Image 2">
+                <img src="https://sivakotimannem.my.canva.site/com/_assets/media/bb3f61571e2a0a5d3dbc84c526e500ac.jpg" alt="Gallery Image 3">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch with cinefeel</h2>
+            <div class="contact-item">
+                <p><a href="mailto:sivakotimannem@gmail.com">sivakotimannem@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M16.579,14.088C16.273,13.97,14.99,13.33,14.743,13.238C14.498,13.145,14.323,13.098,14.15,13.348C13.976,13.599,13.414,14.238,13.24,14.413C13.064,14.588,12.89,14.613,12.584,14.498C12.278,14.38,11.303,14.048,10.153,13.013C9.254,12.18,8.693,11.213,8.543,10.963C8.39,10.713,8.525,10.575,8.65,10.45C8.762,10.338,8.898,10.163,9.023,10.013C9.148,9.863,9.198,9.75,9.296,9.575C9.393,9.4,9.347,9.238,9.272,9.113C9.197,8.988,8.682,7.738,8.46,7.263C8.238,6.788,8.013,6.85,7.852,6.85C7.688,6.85,7.513,6.85,7.338,6.85C7.163,6.85,6.913,6.913,6.69,7.163C6.464,7.413,5.823,7.988,5.823,9.163C5.823,10.338,6.715,11.463,6.84,11.613C6.965,11.763,8.658,14.438,11.298,15.538C13.938,16.638,13.938,16.175,14.413,16.125C14.888,16.075,16.038,15.45,16.26,14.813C16.485,14.175,16.485,13.688,16.41,13.599C16.335,13.513,16.163,13.45,15.938,13.338L16.579,14.088Z M12.001,2.025C6.487,2.025,2.026,6.488,2.026,12C2.026,17.513,6.487,21.975,12.001,21.975C17.514,21.975,21.975,17.513,21.975,12C21.975,6.488,17.514,2.025,12.001,2.025ZM12,20.025C7.58,20.025,3.975,16.42,3.975,12C3.975,7.58,7.58,3.975,12,3.975C16.42,3.975,20.025,7.58,20.025,12C20.025,16.42,16.42,20.025,12,20.025Z"></path></svg> What’sapp</h3>
+                <p>+91 7093825513</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/shiva_is__love/" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/8e14e6c70f4c1e3aaed7b2eafc7da85f.png" alt="Instagram"></a>
+                <a href="https://twitter.com/Shiva__is_love" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/00719f4823f90843c26a4ebf9a7c3347.png" alt="Twitter"></a>
+                <a href="https://www.facebook.com/sivakotichowdary.mannem/?locale=hi_IN" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/3aa66166dd203cfdcaedfe4cd18c44bd.png" alt="Facebook"></a>
+                <a href="https://in.linkedin.com/in/siva-koti-mannem-083a66253" target="_blank"><img src="https://sivakotimannem.my.canva.site/com/_assets/media/0a650f84c8e697505e30f934b7b6cc0c.png" alt="LinkedIn"></a>
+            </div>
+            <p style="margin-top: 30px;"><a href="#contact" class="cta-button">Let's collaborate with cinefeel</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <script>document.write(new Date().getFullYear())</script> cinefeel. All rights reserved.</p>
+    </footer>
+
+    <div id="fullscreen-modal">
+        <span id="close-fullscreen">&times;</span>
+        <img id="fullscreen-image" src="" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const autoplayVideo = document.getElementById('autoplay-video');
+            if (autoplayVideo) {
+                 const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+                const videoObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const playPromise = autoplayVideo.play();
+                            if (playPromise !== undefined) {
+                                playPromise.then(_ => {}).catch(error => {
+                                    console.warn("Autoplay video was prevented:", error);
+                                });
+                            }
+                        } else {
+                            autoplayVideo.pause();
+                        }
+                    });
+                }, observerOptions);
+                videoObserver.observe(autoplayVideo);
+            } else {
+                console.warn("Video element with id 'autoplay-video' not found.");
+            }
+
+            const modal = document.getElementById('fullscreen-modal');
+            const modalImg = document.getElementById('fullscreen-image');
+            const closeBtn = document.getElementById('close-fullscreen');
+            const clickableImages = document.querySelectorAll(
+                '.gallery-grid img, .portfolio-item img, .vertical-text-item img, #about-cinefeel img, #philosophy-quote img'
+            );
+
+            clickableImages.forEach(img => {
+                if (img.src && img.src !== window.location.href) { // Ensure img.src is valid
+                    img.addEventListener('click', function() {
+                        modal.style.display = "flex";
+                        modalImg.src = this.src;
+                        setTimeout(() => {
+                           modal.classList.add('visible');
+                        }, 10);
+                    });
+                }
+            });
+
+            function closeModal() {
+                modal.classList.remove('visible');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    modalImg.src = "";
+                }, 300);
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape" && modal.classList.contains('visible')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
